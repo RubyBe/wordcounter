@@ -54,7 +54,8 @@ namespace WordCounter
     public int CountRepeats(string singleword, string stringofwords)
     {
       int countResult = 0;
-      _listOfWords = stringofwords.Split(' ');
+      string capitalString = stringofwords.ToUpper();
+      _listOfWords = capitalString.Split(' ');
       foreach(var word in _listOfWords)
       {
         if (word == singleword)
