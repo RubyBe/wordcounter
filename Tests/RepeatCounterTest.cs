@@ -41,11 +41,11 @@ namespace WordCounter
       // Act
       string resultString = testRepeatCounter.FindWord(testWord, testString);
       // Assert
-      Console.WriteLine("Spec 4 expected: " + testString + " Spec2 actual: " + resultString);
+      Console.WriteLine("Spec 4 expected: " + testString + " Spec4 actual: " + resultString);
       Assert.Equal(resultString, "True");
     }
 
-    // Spec4: test of ability of program to count the number of times a submitted single word is found in a submitted string of multiple words
+    // Spec5: test of ability of program to count the number of times a submitted single word is found in a submitted string of multiple words
     [Fact]
     public void CountRepeats_CountsWordReptitionInStringOfMultipleWords_ReturnsCountOfRepeats()
     {
@@ -57,7 +57,7 @@ namespace WordCounter
       // Act
       int resultCount = testRepeatCounter.CountRepeats(testWord, testString);
       // Assert
-      Console.WriteLine("Spec 4 expected: " + testCount + " Spec2 actual: " + resultCount);
+      Console.WriteLine("Spec 5 expected: " + testCount + " Spec5 actual: " + resultCount);
       Assert.Equal(testCount, resultCount);
     }
 
