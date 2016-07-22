@@ -1,3 +1,4 @@
+using System;
 using Xunit;
 
 
@@ -18,6 +19,7 @@ namespace WordCounter
       string resultString = testRepeatCounter.GetWord();
 
       // Assert
+      Console.WriteLine("Spec 1 expected: " + testString + " and actual: " + resultString);
       Assert.Equal(testString, resultString);
     }
   }
