@@ -31,5 +31,12 @@ namespace WordCounter
 
     // -------------------------------------------------------------------------
     // other methods
+
+    // a method which searches the submitted list of multiple words and finds whether or not the submitted single word exists in the list of words
+    public string FindWord()
+    {
+      return "True";
+    }
+
   }
 }

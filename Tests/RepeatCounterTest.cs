@@ -8,9 +8,11 @@ namespace WordCounter
 {
   public class RepeatCounterTest
   {
+    // Because we are not saving instances of the RepeatCounter class, IDisposable is not required
+
     // Spec1: test of the ability for the program to accept a single-word string as an input and return it for display - test removed and combined with Spec2 test
 
-    // Spec2: test of the ability of the program to accept a string of words as an input and return it for display - combining tests for spec 1 and 2 to accomodate a single constructor which accepts two strings
+    // Spec2 & Spec3: test of the ability of the program to accept a string of words as an input and return it for display - combining tests for spec 1 and 2 to accomodate a single constructor which accepts two strings. Combining it ended up being a test for Spec3 as well.
     [Fact]
     public void RepeatCounter_CreatesARepeatCounterObjectWithTwoStrings_ReturnsValueOfTwoStrings()
     {
@@ -27,5 +29,21 @@ namespace WordCounter
       Assert.Equal(testWord, resultWord);
       Assert.Equal(testString, resultString);
     }
+
+    // Spec4: test of the ability of the program to scan the submitted string of words and find occurrences of the submitted single word string
+    [Fact]
+    public void FindWord_FindsWordInStringOfMultipleWords_DisplaysTrueIfFound()
+    {
+      // Arrange
+      string testWord = "antelope";
+      string testString = "An antelope is like a gazelle in a way but it begins with an A actually.";
+      RepeatCounter testRepeatCounter = new RepeatCounter(testWord, testString);
+      // Act
+      string resultString = testRepeatCounter.FindWord();
+      // Assert
+      Console.WriteLine("Spec 3 expected: 'True' and Spect2 actual: " + resultString);
+      Assert.Equal(resultString, "True");
+    }
+
   }
 }
