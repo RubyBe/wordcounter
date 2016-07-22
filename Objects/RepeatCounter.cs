@@ -1,6 +1,5 @@
-using System.Collections;
+
 using System.Collections.Generic;
-using System.Text;
 
 namespace WordCounter
 {
@@ -50,6 +49,14 @@ namespace WordCounter
       }
       return findResult;
     }
+
+    // a method which searches the submitted list of multiple words and finds whether or not the submitted single word exists in the list of words, and counts the occurrences of the word
+    public int CountRepeats(string singleword, string stringofwords)
+    {
+      return 0;
+    }
+
+
 
   }
 }

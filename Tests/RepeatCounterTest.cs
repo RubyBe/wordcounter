@@ -1,7 +1,5 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 
@@ -39,13 +37,28 @@ namespace WordCounter
       // Arrange
       string testWord = "antelope";
       string testString = "An antelope is like a gazelle in a way but it begins with an A actually.";
-      // StringBuilder resultString = new StringBuilder();
       RepeatCounter testRepeatCounter = new RepeatCounter(testWord, testString);
       // Act
       string resultString = testRepeatCounter.FindWord(testWord, testString);
       // Assert
       Console.WriteLine("Spec 4 expected: " + testString + " Spec2 actual: " + resultString);
-      // Assert.Equal(resultString, "True");
+      Assert.Equal(resultString, "True");
+    }
+
+    // Spec4: test of ability of program to count the number of times a submitted single word is found in a submitted string of multiple words
+    [Fact]
+    public void CountRepeats_CountsWordReptitionInStringOfMultipleWords_ReturnsCountOfRepeats()
+    {
+      // Arrange
+      string testWord = "antelope";
+      string testString = "An antelope is like a gazelle in a way but it begins with an A actually.";
+      int testCount = 1;
+      RepeatCounter testRepeatCounter = new RepeatCounter(testWord, testString);
+      // Act
+      int resultCount = testRepeatCounter.CountRepeats(testWord, testString);
+      // Assert
+      Console.WriteLine("Spec 4 expected: " + testCount + " Spec2 actual: " + resultCount);
+      Assert.Equal(testCount, resultCount);
     }
 
   }
