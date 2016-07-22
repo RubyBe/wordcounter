@@ -11,6 +11,7 @@ namespace WordCounter
     private string _word;
     private string _stringOfWords;
     private string[] _listOfWords;
+    private int _countResult;
 
     // -------------------------------------------------------------------------
     // constructors, getters, and setters
@@ -30,6 +31,11 @@ namespace WordCounter
     public string GetStringOfWords()
     {
       return _stringOfWords;
+    }
+    // a getter which returns the count of _word in _stringOfWords
+    public int GetCount()
+    {
+      return _countResult;
     }
 
     // -------------------------------------------------------------------------
@@ -53,18 +59,16 @@ namespace WordCounter
     // a method which searches the submitted list of multiple words and finds whether or not the submitted single word exists in the list of words, and counts the occurrences of the word
     public int CountRepeats(string singleword, string stringofwords)
     {
-      int countResult = 0;
-
       string capitalString = stringofwords.ToUpper();
       _listOfWords = capitalString.Split(' ');
       foreach(var word in _listOfWords)
       {
         if (word == singleword)
         {
-          countResult += 1;
+          _countResult += 1;
         }
       }
-      return countResult;
+      return _countResult;
     }
 
     // a method which strips punctuation from a string
