@@ -1,5 +1,5 @@
-
 using System.Collections.Generic;
+using System.Text;
 
 namespace WordCounter
 {
@@ -54,6 +54,7 @@ namespace WordCounter
     public int CountRepeats(string singleword, string stringofwords)
     {
       int countResult = 0;
+
       string capitalString = stringofwords.ToUpper();
       _listOfWords = capitalString.Split(' ');
       foreach(var word in _listOfWords)
@@ -66,7 +67,14 @@ namespace WordCounter
       return countResult;
     }
 
-
+    // a method which strips punctuation from a string
+    public string RemovePunctuation(string stringofwords)
+    {
+      StringBuilder stringOfWords = new StringBuilder(stringofwords);
+      stringOfWords.Replace(".", "");
+      string newStringOfWords = stringOfWords.ToString();
+      return newStringOfWords;
+    }
 
   }
 }

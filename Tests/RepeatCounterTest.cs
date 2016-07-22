@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text;
 using Xunit;
 
 
@@ -89,8 +90,9 @@ namespace WordCounter
       string testString = "An antelope is like a gazelle in a way but it begins with an A actually.";
       int testCount = 1;
       RepeatCounter testRepeatCounter = new RepeatCounter(testWord, testString);
+      string testCleanString = testRepeatCounter.RemovePunctuation(testString);
       // Act
-      int resultCount = testRepeatCounter.CountRepeats(testWord, testString);
+      int resultCount = testRepeatCounter.CountRepeats(testWord, testCleanString);
       // Assert
       Console.WriteLine("Spec 7 expected: " + testCount + " Spec 7 actual: " + resultCount);
       Assert.Equal(testCount, resultCount);
