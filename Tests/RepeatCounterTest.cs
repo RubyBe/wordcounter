@@ -24,8 +24,8 @@ namespace WordCounter
       string resultWord = testRepeatCounter.GetWord();
       string resultString = testRepeatCounter.GetStringOfWords();
       // Assert
-      Console.WriteLine("Spec 1 expected: " + testWord + " Spec1 actual: " + resultWord);
-      Console.WriteLine("Spec 2 expected: " + testString + " Spec2 actual: " + resultString);
+      Console.WriteLine("Spec 1 expected: " + testWord + " Spec 1 actual: " + resultWord);
+      Console.WriteLine("Spec 2 expected: " + testString + " Spec 2 actual: " + resultString);
       Assert.Equal(testWord, resultWord);
       Assert.Equal(testString, resultString);
     }
@@ -41,7 +41,7 @@ namespace WordCounter
       // Act
       string resultString = testRepeatCounter.FindWord(testWord, testString);
       // Assert
-      Console.WriteLine("Spec 4 expected: " + testString + " Spec4 actual: " + resultString);
+      Console.WriteLine("Spec 4 expected: " + testString + " Spec 4 actual: " + resultString);
       Assert.Equal(resultString, "True");
     }
 
@@ -58,7 +58,7 @@ namespace WordCounter
       // Act
       int resultCount = testRepeatCounter.CountRepeats(testWord, testString);
       // Assert
-      Console.WriteLine("Spec 5 expected: " + testCount + " Spec5 actual: " + resultCount);
+      Console.WriteLine("Spec 5 expected: " + testCount + " Spec 5 actual: " + resultCount);
       Assert.Equal(testCount, resultCount);
     }
 
@@ -75,7 +75,24 @@ namespace WordCounter
       // Act
       int resultCount = testRepeatCounter.CountRepeats(testWord, testString);
       // Assert
-      Console.WriteLine("Spec 6 expected: " + testCount + " Spec6 actual: " + resultCount);
+      Console.WriteLine("Spec 6 expected: " + testCount + " Spec 6 actual: " + resultCount);
+      Assert.Equal(testCount, resultCount);
+    }
+
+    // Spec7: test of ability of program to count the number of times a submitted single word is found in a submitted string of multiple words, regardless of surrounding punctuation
+    [Fact]
+    public void FindWord_FindsWordInStringOfMultipleWordsWithPunchtuation_ReturnsCountOfRepeatsRegardlessOfPunctuation()
+    {
+      // Arrange
+      string inputWord = "actually";
+      string testWord = inputWord.ToUpper();
+      string testString = "An antelope is like a gazelle in a way but it begins with an A actually.";
+      int testCount = 1;
+      RepeatCounter testRepeatCounter = new RepeatCounter(testWord, testString);
+      // Act
+      int resultCount = testRepeatCounter.CountRepeats(testWord, testString);
+      // Assert
+      Console.WriteLine("Spec 7 expected: " + testCount + " Spec 7 actual: " + resultCount);
       Assert.Equal(testCount, resultCount);
     }
 
