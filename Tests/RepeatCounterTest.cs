@@ -61,5 +61,21 @@ namespace WordCounter
       Assert.Equal(testCount, resultCount);
     }
 
+    // Spec6: test of ability of program to count the number of times a submitted single word is found in a submitted string of multiple words, regardless of case
+    [Fact]
+    public void FindWord_FindsWordInStringOfMultipleWordsCapitalizedOrNot_ReturnsCountOfRepeatsRegardlessOfCase()
+    {
+      // Arrange
+      string testWord = "a";
+      string testString = "An antelope is like a gazelle in a way but it begins with an A actually.";
+      int testCount = 3;
+      RepeatCounter testRepeatCounter = new RepeatCounter(testWord, testString);
+      // Act
+      int resultCount = testRepeatCounter.CountRepeats(testWord, testString);
+      // Assert
+      Console.WriteLine("Spec 6 expected: " + testCount + " Spec6 actual: " + resultCount);
+      Assert.Equal(testCount, resultCount);
+    }
+
   }
 }
