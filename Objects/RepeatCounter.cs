@@ -1,3 +1,6 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Text;
 
 namespace WordCounter
 {
@@ -8,6 +11,7 @@ namespace WordCounter
     // properties
     private string _word;
     private string _stringOfWords;
+    private string[] _listOfWords;
 
     // -------------------------------------------------------------------------
     // constructors, getters, and setters
@@ -33,9 +37,18 @@ namespace WordCounter
     // other methods
 
     // a method which searches the submitted list of multiple words and finds whether or not the submitted single word exists in the list of words
-    public string FindWord()
+    public string FindWord(string singleword, string stringofwords)
     {
-      return "True";
+      string findResult = "False";
+      _listOfWords = stringofwords.Split(' ');
+      foreach(var word in _listOfWords)
+      {
+        if (word == singleword)
+        {
+          findResult = "True";
+        }
+      }
+      return findResult;
     }
 
   }
