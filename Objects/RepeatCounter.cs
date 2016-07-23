@@ -27,10 +27,20 @@ namespace WordCounter
     {
       return _word;
     }
+    // a setter which sets the value of the _word property
+    public void SetWord(string word)
+    {
+      _word = word;
+    }
     // a getter which returns the value of the _stringOfWords property
     public string GetStringOfWords()
     {
       return _stringOfWords;
+    }
+    // a setter which sets the value of the _stringOfWords property
+    public void SetStringOfWords(string stringofwords)
+    {
+      _stringOfWords = stringofwords;
     }
     // a getter which returns the count of _word in _stringOfWords
     public int GetCount()
@@ -83,10 +93,8 @@ namespace WordCounter
       stringOfWords.Replace("\"", "");
       stringOfWords.Replace("\'", "");
       stringOfWords.Replace("\\", "");
-
       string newStringOfWords = stringOfWords.ToString();
       return newStringOfWords;
     }
-
   }
 }
