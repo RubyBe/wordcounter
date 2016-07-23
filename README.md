@@ -2,7 +2,7 @@
 
 #### _Project Specifications_
 
-#### By _** Sid Benavente **_
+#### By _**Sid Benavente**_
 
 ## Description/Specs
 
@@ -32,6 +32,6 @@ Please contact the authors if you have any questions or comments.
 This webpage was written using C#, Nancy, Razor, CSS, and Bootstrap.
 
 ### License
-Copyright (c) 2016 _** Sid Benavente **_
+Copyright (c) 2016 _**Sid Benavente**_
 
 This software is licensed under the MIT license.
