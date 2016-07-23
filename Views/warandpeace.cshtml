@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="Content/css/styles.css" rel="stylesheet" type="text/css">
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="Content/js/scripts.js"></script>
+    <title>warandpeace</title>
+  </head>
+  <body>
+    <div class="container jumbotron">
+      <h1>Your Word in War and Peace</h1>
+    </div>
+    <div class="container jumbotron">
+      <h2>You entered the word: @Model.GetWord()</h2>
+
+      <h2>The count for occurrences of your word in the the text of War and Peace is: @Model.GetCount()</h2>
+
+      <form class="" action="/" >
+        <button type="submit" name="button" class="btn btn-primary">Return Home</button>
+      </form>
+    </div>
+  </body>
+</html>

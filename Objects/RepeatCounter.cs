@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace WordCounter
@@ -85,6 +87,7 @@ namespace WordCounter
     // a method which strips punctuation from a string
     public string RemovePunctuation(string stringofwords)
     {
+      // use the mutable type StringBuilder to not duplicate strings
       StringBuilder stringOfWords = new StringBuilder(stringofwords);
       stringOfWords.Replace(".", "");
       stringOfWords.Replace("!", "");
@@ -95,6 +98,24 @@ namespace WordCounter
       stringOfWords.Replace("\\", "");
       string newStringOfWords = stringOfWords.ToString();
       return newStringOfWords;
+    }
+
+    // a method which reads a file containing the text of War and Peace and returns the full text
+    public string ReadAFile()
+    {
+      string bookLine = "";
+      try
+      {
+        using (StreamReader sr = new StreamReader("Content/warandpeace.txt"))
+        {
+          bookLine = sr.ReadToEnd();
+        }
+      }
+      catch(Exception e)
+      {
+        Console.WriteLine(e.Message);
+      }
+      return bookLine;
     }
   }
 }
