@@ -76,6 +76,13 @@ namespace WordCounter
     {
       StringBuilder stringOfWords = new StringBuilder(stringofwords);
       stringOfWords.Replace(".", "");
+      stringOfWords.Replace("!", "");
+      stringOfWords.Replace("?", "");
+      stringOfWords.Replace("-", "");
+      stringOfWords.Replace("\"", "");
+      stringOfWords.Replace("\'", "");
+      stringOfWords.Replace("\\", "");
+
       string newStringOfWords = stringOfWords.ToString();
       return newStringOfWords;
     }
