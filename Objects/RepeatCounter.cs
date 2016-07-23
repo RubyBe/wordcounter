@@ -59,11 +59,12 @@ namespace WordCounter
     // a method which searches the submitted list of multiple words and finds whether or not the submitted single word exists in the list of words, and counts the occurrences of the word
     public int CountRepeats(string singleword, string stringofwords)
     {
+      string capitalWord = singleword.ToUpper();
       string capitalString = stringofwords.ToUpper();
       _listOfWords = capitalString.Split(' ');
       foreach(var word in _listOfWords)
       {
-        if (word == singleword)
+        if (word == capitalWord)
         {
           _countResult += 1;
         }

@@ -51,8 +51,7 @@ namespace WordCounter
     public void CountRepeats_CountsWordReptitionInStringOfMultipleWords_ReturnsCountOfRepeats()
     {
       // Arrange
-      string inputWord = "antelope";
-      string testWord = inputWord.ToUpper();
+      string testWord = "antelope";
       string testString = "An antelope is like a gazelle in a way but it begins with an A actually.";
       int testCount = 1;
       RepeatCounter testRepeatCounter = new RepeatCounter(testWord, testString);

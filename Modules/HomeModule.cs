@@ -17,8 +17,7 @@ public class HomeModule : NancyModule
       string firstString = formRepeatCounter.GetStringOfWords();
       string cleanString = formRepeatCounter.RemovePunctuation(firstString);
       string findWord = formRepeatCounter.GetWord();
-      string upperWord = findWord.ToUpper();
-      int countWords = formRepeatCounter.CountRepeats(upperWord, cleanString);
+      int countWords = formRepeatCounter.CountRepeats(findWord, cleanString);
       Console.WriteLine(countWords);
       return View["result.cshtml", formRepeatCounter];
     };
