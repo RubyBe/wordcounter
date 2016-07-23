@@ -89,10 +89,12 @@ namespace WordCounter
       string testWord = inputWord.ToUpper();
       string testString = "An antelope is like a gazelle in a way but it begins with an A actually.";
       int testCount = 1;
+      int resultCount = 0;
       RepeatCounter testRepeatCounter = new RepeatCounter(testWord, testString);
       string testCleanString = testRepeatCounter.RemovePunctuation(testString);
       // Act
-      int resultCount = testRepeatCounter.CountRepeats(testWord, testCleanString);
+      Console.WriteLine("Spec 7 pre-method-call resultCount value: " + resultCount);
+      resultCount = testRepeatCounter.CountRepeats(testWord, testCleanString);
       // Assert
       Console.WriteLine("Spec 7 expected: " + testCount + " Spec 7 actual: " + resultCount);
       Assert.Equal(testCount, resultCount);
